@@ -1,0 +1,41 @@
+Docker Notes ...
+
+Use of virtual machines is to test the projects with different versions of packages hey use. Virtual machines use hypervisor to run both os , example like vmware,virtualbox,hyperv(only windows).
+
+Use of vm require divide of resources in the host system. This may slow down system, require more computations. and also require installation of each os files(iso).
+
+
+So inorder to solve this docker came , where every project will be in a container if user do not want then he can erase it without harming the host os. This starts quickly because runs on liscensed  os .
+
+Docker architecture - 
+
+client-server.. , client uses rest apis to server docker.Special kinds of processes.It shares the kernel of host os.
+
+Installing Docker ...
+Through official website either for windows,linux,macos
+
+Development Application....
+To create the image of files and push into docker hub
+Dockerfile...
+#######
+FROM node:alpine
+COPY . /app
+WORKDIR /app
+CMD node app.js
+#######
+
+pull command
+docker pull docker_hub_directory/name
+
+push command 
+#firstly list the images in the os by 
+docker images or docker image ls
+now select the image you want to push 
+
+#firstly you need to login into docker.io for that use
+docker login -u "yourname" -p "yourpassword" docker.io
+
+then, 
+docker push your_image:tagname
+
+  
